@@ -5,16 +5,17 @@ using TMPro;
 
 public class ChatBubble : MonoBehaviour
 {
-    private SpriteRenderer backgroundSpriteRenderer;
-    private SpriteRenderer iconSpriteRenderer;
-    private TextMeshPro textMeshPro;
+    #region old
+    //private SpriteRenderer backgroundSpriteRenderer;
+    //private SpriteRenderer iconSpriteRenderer;
+    //private TextMeshPro textMeshPro;
 
     //[SerializeField] private Sprite happyIconSprite;
     //[SerializeField] private Sprite neutralIconSprite;
     //[SerializeField] private Sprite angryIconSprite;
     //[SerializeField] private Sprite sadIconSprite;
 
-    public Transform ChatBubblePrefab;
+    //public Transform ChatBubblePrefab;
 
     //public static void Create(Transform parent, Vector3 localPosition)
     //{
@@ -82,5 +83,6 @@ public class ChatBubble : MonoBehaviour
     //            break;
     //    }
     //}
+    #endregion
     #endregion
 }

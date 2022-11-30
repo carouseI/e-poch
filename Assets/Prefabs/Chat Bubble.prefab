@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8116072956982449508
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8116072956982449509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.004, y: 0.031, z: 0}
-  m_LocalScale: {x: 0.012555678, y: 0.012206882, z: 0.012555678}
+  m_LocalScale: {x: 0.012555678, y: 0.01220688, z: 0.01255568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8116072958413469227}
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 8116072958068347879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.024619197, y: 0.023495268, z: 0.39012}
+  m_LocalScale: {x: 0.02333314, y: 0.022319928, z: 0.37060437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8116072958413469227}
@@ -195,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 8116072958413469224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4486775, y: 1.1262915, z: 1.7161757}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8116072958068347878}
@@ -216,7 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f89e825cda141c79c3d789cad94996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChatBubblePrefab: {fileID: 8116072958413469227}
 --- !u!111 &3844569975553929471
 Animation:
   m_ObjectHideFlags: 0
