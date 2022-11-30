@@ -1040,43 +1040,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4752662876082006, guid: 1fdfc37f91a411548a5f4dcd69f7ecae, type: 3}
   m_PrefabInstance: {fileID: 1199610245}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &126387153
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &128788573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4186,6 +4149,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4507681577306286, guid: ba3907b26025b4343bffda1891d96e04, type: 3}
   m_PrefabInstance: {fileID: 432587787}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &433764469
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &440532516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12277,15 +12277,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8116072958068347873, guid: 8000a27c69247469987fce76ab208d96, type: 3}
       propertyPath: m_Color.b
-      value: 0.18624459
+      value: 0.94221205
       objectReference: {fileID: 0}
     - target: {fileID: 8116072958068347873, guid: 8000a27c69247469987fce76ab208d96, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8116072958068347873, guid: 8000a27c69247469987fce76ab208d96, type: 3}
       propertyPath: m_Color.r
-      value: 0.7264151
+      value: 0.15566039
       objectReference: {fileID: 0}
     - target: {fileID: 8116072958413469224, guid: 8000a27c69247469987fce76ab208d96, type: 3}
       propertyPath: m_Name
@@ -21019,7 +21019,7 @@ PrefabInstance:
     - target: {fileID: 114943683913522278, guid: 2cac2e60f3f6f2447ad9b550450f60ed, type: 3}
       propertyPath: _depthTex
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 433764469}
     - target: {fileID: 114943683913522278, guid: 2cac2e60f3f6f2447ad9b550450f60ed, type: 3}
       propertyPath: _waves.Array.data[0].direction
       value: -157.6966
@@ -25050,6 +25050,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 896768074}
     m_Modifications:
+    - target: {fileID: 5702016798605189054, guid: ded49a421d97e4de984f683fd748b3b5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c09b41223d394677a8312cfed713581, type: 2}
+    - target: {fileID: 5702016798669642796, guid: ded49a421d97e4de984f683fd748b3b5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c09b41223d394677a8312cfed713581, type: 2}
+    - target: {fileID: 5702016799006961129, guid: ded49a421d97e4de984f683fd748b3b5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c09b41223d394677a8312cfed713581, type: 2}
     - target: {fileID: 7921461499412183571, guid: ded49a421d97e4de984f683fd748b3b5, type: 3}
       propertyPath: m_Name
       value: darklings
