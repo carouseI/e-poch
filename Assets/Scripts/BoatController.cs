@@ -10,6 +10,7 @@ public class BoatController : MonoBehaviour
 {
     #region wasd
     //[SerializeField] float speed;
+    //[SerializeField] float rotationSpeed;
 
     //private Vector3 currentPosition;
 
@@ -28,47 +29,63 @@ public class BoatController : MonoBehaviour
 
     //    transform.position = currentPosition;
     //}
+
+    //public void Rotation()
+    //{
+    //Vector3 targetDirection = Vector3.zero;
+
+    //targetDirection.Normalize();
+    //targetDirection.y = 0;
+
+    //if (targetDirection == Vector3.zero)
+    //    targetDirection = transform.forward;
+
+    //Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+    //Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+    //transform.rotation = playerRotation;
+    //}
     #endregion
 
     #region auto
-    [SerializeField] float moveSpeed = 1f;
-    //public static int moveSpeed = 1f;
-    public Vector3 boatDirection = Vector3.forward;
+    //[SerializeField] float moveSpeed = 1f;
+    ////public static int moveSpeed = 1f;
+    //public Vector3 boatDirection = Vector3.forward;
 
-    public void Update()
-    {
-        transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
-    }
+    //public void Update()
+    //{
+    //    transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
+    //}
     #endregion
 
     #region direct move
-    //[SerializeField]
-    //Transform _destination;
+    [SerializeField]
+    Transform _destination;
 
-    //NavMeshAgent _navMeshAgent;
+    NavMeshAgent _navMeshAgent;
 
-    //void Start()
-    //{
-    //    _navMeshAgent = this.GetComponent<NavMeshAgent>();
+    void Start()
+    {
+        _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
-    //    if (_navMeshAgent == null)
-    //    {
-    //        Debug.LogError("navmeshagent comp not attached to " + gameObject.name);
-    //    }
-    //    else
-    //    {
-    //        SetDestination();
-    //    }
-    //}
+        if (_navMeshAgent == null)
+        {
+            Debug.LogError("navmeshagent comp not attached to " + gameObject.name);
+        }
+        else
+        {
+            SetDestination();
+        }
+    }
 
-    //private void SetDestination()
-    //{
-    //    if (_destination != null)
-    //    {
-    //        Vector3 targetVector = _destination.transform.position;
-    //        _navMeshAgent.SetDestination(targetVector);
-    //    }
-    //}
+    private void SetDestination()
+    {
+        if (_destination != null)
+        {
+            Vector3 targetVector = _destination.transform.position;
+            _navMeshAgent.SetDestination(targetVector);
+        }
+    }
     #endregion
 
     #region connected movement
