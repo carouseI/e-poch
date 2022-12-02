@@ -48,44 +48,44 @@ public class BoatController : MonoBehaviour
     #endregion
 
     #region auto
-    //[SerializeField] float moveSpeed = 1f;
-    ////public static int moveSpeed = 1f;
-    //public Vector3 boatDirection = Vector3.forward;
+    [SerializeField] float moveSpeed = 1f;
+    //public static int moveSpeed = 1f;
+    public Vector3 boatDirection = Vector3.forward;
 
-    //public void Update()
-    //{
-    //    transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
-    //}
+    public void Update()
+    {
+        transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
+    }
     #endregion
 
     #region direct move
-    [SerializeField]
-    Transform _destination;
+    //[SerializeField]
+    //Transform _destination;
 
-    NavMeshAgent _navMeshAgent;
+    //NavMeshAgent _navMeshAgent;
 
-    void Start()
-    {
-        _navMeshAgent = this.GetComponent<NavMeshAgent>();
+    //void Start()
+    //{
+    //    _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
-        if (_navMeshAgent == null)
-        {
-            Debug.LogError("navmeshagent comp not attached to " + gameObject.name);
-        }
-        else
-        {
-            SetDestination();
-        }
-    }
+    //    if (_navMeshAgent == null)
+    //    {
+    //        Debug.LogError("navmeshagent comp not attached to " + gameObject.name);
+    //    }
+    //    else
+    //    {
+    //        SetDestination();
+    //    }
+    //}
 
-    private void SetDestination()
-    {
-        if (_destination != null)
-        {
-            Vector3 targetVector = _destination.transform.position;
-            _navMeshAgent.SetDestination(targetVector);
-        }
-    }
+    //private void SetDestination()
+    //{
+    //    if (_destination != null)
+    //    {
+    //        Vector3 targetVector = _destination.transform.position;
+    //        _navMeshAgent.SetDestination(targetVector);
+    //    }
+    //}
     #endregion
 
     #region connected movement
