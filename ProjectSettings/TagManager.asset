@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
-  - Waypoint
+  - Node
   layers:
   - Default
   - TransparentFX

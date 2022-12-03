@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 
-public class Waypoint : MonoBehaviour
+public class Node : MonoBehaviour
 {
     [SerializeField]
     protected float debugDrawRadius = 1f; //set gizmo radius

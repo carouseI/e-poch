@@ -48,14 +48,14 @@ public class BoatController : MonoBehaviour
     #endregion
 
     #region auto
-    [SerializeField] float moveSpeed = 1f;
-    //public static int moveSpeed = 1f;
-    public Vector3 boatDirection = Vector3.forward;
+    //[SerializeField] float moveSpeed = 1f;
+    ////public static int moveSpeed = 1f;
+    //public Vector3 boatDirection = Vector3.forward;
 
-    public void Update()
-    {
-        transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
-    }
+    //public void Update()
+    //{
+    //    transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
+    //}
     #endregion
 
     #region direct move
@@ -191,4 +191,29 @@ public class BoatController : MonoBehaviour
     //    _travelling = true;
     //}
     #endregion
+
+    public Transform nextNode;
+    public float moveSpeed;
+
+    private void Update()
+    {
+        MoveBoat();
+    }
+
+    private void MoveBoat()
+    {
+        Vector3 moveDir = nextNode.position - this.transform.position; //move to next node
+        moveDir = moveDir.normalized; //reset, mult by 1
+        Vector3 changeInPos = moveDir * moveSpeed;
+
+        changeInPos.y = 0; //exclude vertical movement
+
+        this.transform.position += changeInPos;
+        this.transform.Rotate(Quaternion.FromToRotation(this.transform.forward, moveDir).eulerAngles); //calculate rotation
+    }
+
+    private void FixedUpdate()
+    {
+
+    }
 }
