@@ -195,19 +195,33 @@ public class BoatController : MonoBehaviour
     [SerializeField]
     List<Node> _nodes; //node list
 
+    [SerializeField]
+    public List<Node> _docks; //docks list
+
     public Transform nextNode;
+    public Transform nextDock;
     public float moveSpeed;
 
     public int nextNodeIndex = 0;
     public bool isFinalNode = false; //set default to false
 
+    public int nextDockIndex = 0;
+    public bool isDocking = false; //set default to false
+    public bool isInDockingRange;
+
     private void Start() //get node data
     {
         nextNode = _nodes[nextNodeIndex].transform; //get next node transform in index
+        nextDock = _docks[nextDockIndex].transform; //get next dock transform in index
     }
 
     private void Update() //move based on node data
     {
+        if (Input.GetKeyDown(KeyCode.E) && isInDockingRange == true) //if e is pressed + in range
+        {
+            isDocking = true; //dock
+        }
+
         if(Vector3.Distance(transform.position, nextNode.position) <= 0.5f) //if distance between player + next node is less than .5
         {
             nextNodeIndex++; //increment
@@ -218,16 +232,28 @@ public class BoatController : MonoBehaviour
                 isFinalNode = true; //stop when final destination is reached
             }
         }
-        if(isFinalNode == false) //else, keep moving
+        if (!isFinalNode) //if destination is not reached + is docking
         {
-            Vector3 moveDir = nextNode.position - this.transform.position; //move to next node
-            moveDir = moveDir.normalized; //reset, mult by 1
-            Vector3 changeInPos = moveDir * moveSpeed;
-
-            changeInPos.y = 0; //exclude vertical movement
-
-            this.transform.position += changeInPos;
-            //this.transform.Rotate(Quaternion.FromToRotation(this.transform.forward, moveDir).eulerAngles); //calculate rotation
+            if (isDocking)
+            {
+                isMoving(nextDock); //move to next dock
+            }
+            else //if destination is not reached + is not docking
+            {
+                isMoving(nextNode); //move to next node
+            }
         }
+    }
+
+    private void isMoving(Transform target)
+    {
+        Vector3 moveDir = target.position - this.transform.position; //move to next target
+        moveDir = moveDir.normalized; //reset, mult by 1
+        Vector3 changeInPos = moveDir * moveSpeed;
+
+        changeInPos.y = 0; //exclude vertical movement
+
+        this.transform.position += changeInPos;
+        //this.transform.Rotate(Quaternion.FromToRotation(this.transform.forward, moveDir).eulerAngles); //calculate rotation
     }
 }

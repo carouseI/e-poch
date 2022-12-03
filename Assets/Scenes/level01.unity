@@ -2205,7 +2205,7 @@ GameObject:
   - component: {fileID: 273063422}
   - component: {fileID: 273063423}
   m_Layer: 0
-  m_Name: waypoint 07
+  m_Name: node 07
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2704,7 +2704,7 @@ GameObject:
   - component: {fileID: 309671932}
   - component: {fileID: 309671933}
   m_Layer: 0
-  m_Name: waypoint 04
+  m_Name: node 04
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2763,7 +2763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327394500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4237216, y: 108.7, z: -179.9}
+  m_LocalPosition: {x: 2.4237216, y: 108.7, z: -187}
   m_LocalScale: {x: 78.18452, y: 78.18452, z: 78.18452}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3753,10 +3753,18 @@ MonoBehaviour:
   - {fileID: 1442260692}
   - {fileID: 2096335065}
   - {fileID: 1129948054}
+  _docks:
+  - {fileID: 1229612387}
+  - {fileID: 649714158}
+  - {fileID: 902508206}
   nextNode: {fileID: 0}
+  nextDock: {fileID: 0}
   moveSpeed: 0.05
   nextNodeIndex: 0
   isFinalNode: 0
+  nextDockIndex: 0
+  isDocking: 0
+  isInDockingRange: 0
 --- !u!65 &405349898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3765,7 +3773,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405349891}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 58.028244, y: 61.65683, z: 475.68948}
@@ -4375,43 +4383,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4686523514248806, guid: 5b80a1c9d2d3aa24788f50e40a512560, type: 3}
   m_PrefabInstance: {fileID: 465371813}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &472985397
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &477359305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5066,7 +5037,7 @@ GameObject:
   - component: {fileID: 504220003}
   - component: {fileID: 504220004}
   m_Layer: 0
-  m_Name: waypoint 06
+  m_Name: node 06
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6054,7 +6025,7 @@ GameObject:
   - component: {fileID: 589292064}
   - component: {fileID: 589292065}
   m_Layer: 0
-  m_Name: waypoint 01
+  m_Name: node 01
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6753,7 +6724,7 @@ GameObject:
   - component: {fileID: 649714158}
   m_Layer: 0
   m_Name: dock point 02
-  m_TagString: Untagged
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6766,7 +6737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649714156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.18, y: 0, z: 66.61}
+  m_LocalPosition: {x: -1.18, y: 0.5, z: 66.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6782,12 +6753,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 649714156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d40fdf5edbab4410a4bbea8bd95e7a0, type: 3}
+  m_Script: {fileID: 11500000, guid: fe93a125054e8443aa6c3af98412b606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 50
-  _nodes: []
 --- !u!1001 &654510627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7614,7 +7583,7 @@ GameObject:
   - component: {fileID: 704130323}
   - component: {fileID: 704130324}
   m_Layer: 0
-  m_Name: waypoint 02
+  m_Name: node 02
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14540,7 +14509,7 @@ GameObject:
   - component: {fileID: 902508206}
   m_Layer: 0
   m_Name: dock point 03
-  m_TagString: Untagged
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14553,7 +14522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902508204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.06, y: 0, z: 217.98}
+  m_LocalPosition: {x: 13.06, y: 0.5, z: 217.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14569,12 +14538,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 902508204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d40fdf5edbab4410a4bbea8bd95e7a0, type: 3}
+  m_Script: {fileID: 11500000, guid: fe93a125054e8443aa6c3af98412b606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 50
-  _nodes: []
 --- !u!1001 &910698716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18269,7 +18236,7 @@ GameObject:
   - component: {fileID: 1202727114}
   - component: {fileID: 1202727115}
   m_Layer: 0
-  m_Name: waypoint 03
+  m_Name: node 03
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23251,7 +23218,7 @@ GameObject:
   - component: {fileID: 1229612387}
   m_Layer: 0
   m_Name: dock point 01
-  m_TagString: Untagged
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23264,7 +23231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229612385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.34, y: 0, z: -11.71}
+  m_LocalPosition: {x: 6.34, y: 0.5, z: -11.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23280,12 +23247,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1229612385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d40fdf5edbab4410a4bbea8bd95e7a0, type: 3}
+  m_Script: {fileID: 11500000, guid: fe93a125054e8443aa6c3af98412b606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 50
-  _nodes: []
 --- !u!4 &1236004106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4638334436267330, guid: 4db709e84b7e2594fb2bcaae4fbf2bb9, type: 3}
@@ -25538,7 +25503,7 @@ GameObject:
   - component: {fileID: 1442260691}
   - component: {fileID: 1442260692}
   m_Layer: 0
-  m_Name: waypoint 08
+  m_Name: node 08
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29159,6 +29124,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1786755908
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1788224943
 GameObject:
   m_ObjectHideFlags: 0
@@ -32996,7 +32998,7 @@ GameObject:
   - component: {fileID: 2096335064}
   - component: {fileID: 2096335065}
   m_Layer: 0
-  m_Name: waypoint 09
+  m_Name: node 09
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33231,7 +33233,7 @@ GameObject:
   - component: {fileID: 2128109381}
   - component: {fileID: 2128109382}
   m_Layer: 0
-  m_Name: waypoint 05
+  m_Name: node 05
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
