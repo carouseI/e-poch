@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class BoatController : MonoBehaviour
 {
@@ -192,28 +189,45 @@ public class BoatController : MonoBehaviour
     //}
     #endregion
 
+    [SerializeField]
+    protected float _connectivityRadius = 50f; //connection radius
+
+    [SerializeField]
+    List<Node> _nodes; //node list
+
     public Transform nextNode;
     public float moveSpeed;
 
-    private void Update()
+    public int nextNodeIndex = 0;
+    public bool isFinalNode = false; //set default to false
+
+    private void Start() //get node data
     {
-        MoveBoat();
+        nextNode = _nodes[nextNodeIndex].transform; //get next node transform in index
     }
 
-    private void MoveBoat()
+    private void Update() //move based on node data
     {
-        Vector3 moveDir = nextNode.position - this.transform.position; //move to next node
-        moveDir = moveDir.normalized; //reset, mult by 1
-        Vector3 changeInPos = moveDir * moveSpeed;
+        if(Vector3.Distance(transform.position, nextNode.position) <= 0.5f) //if distance between player + next node is less than .5
+        {
+            nextNodeIndex++; //increment
+            nextNode = _nodes[nextNodeIndex].transform; //get attached object's transform
 
-        changeInPos.y = 0; //exclude vertical movement
+            if(nextNodeIndex == _nodes.Count) //count -- element num ref; 9th element = last
+            {
+                isFinalNode = true; //stop when final destination is reached
+            }
+        }
+        if(isFinalNode == false) //else, keep moving
+        {
+            Vector3 moveDir = nextNode.position - this.transform.position; //move to next node
+            moveDir = moveDir.normalized; //reset, mult by 1
+            Vector3 changeInPos = moveDir * moveSpeed;
 
-        this.transform.position += changeInPos;
-        this.transform.Rotate(Quaternion.FromToRotation(this.transform.forward, moveDir).eulerAngles); //calculate rotation
-    }
+            changeInPos.y = 0; //exclude vertical movement
 
-    private void FixedUpdate()
-    {
-
+            this.transform.position += changeInPos;
+            //this.transform.Rotate(Quaternion.FromToRotation(this.transform.forward, moveDir).eulerAngles); //calculate rotation
+        }
     }
 }

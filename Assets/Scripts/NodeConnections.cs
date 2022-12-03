@@ -10,14 +10,15 @@ public class NodeConnections : Node
     [SerializeField]
     protected float _connectivityRadius = 50f; //connection radius
 
-    List<NodeConnections> _connections; //waypoint list
+    [SerializeField]
+    List<Node> _nodes; //node list
 
     // Start is called before the first frame update
     public void Start()
     {
         GameObject[] allNodes = GameObject.FindGameObjectsWithTag("Node"); //get all waypoint objects in scene
 
-        _connections = new List<NodeConnections>(); //create list of waypoint refs
+        _nodes = new List<Node>(); //create list of waypoint refs
 
         for (int i = 0; i < allNodes.Length; i++)
         {
@@ -27,7 +28,7 @@ public class NodeConnections : Node
             {
                 if (Vector3.Distance(this.transform.position, nextNode.transform.position) <= _connectivityRadius && nextNode != this) //if distance between current + next waypoint, + does not equal this
                 {
-                    _connections.Add(nextNode); //add to current position
+                    _nodes.Add(nextNode); //add to current position
                 }
             }
         }
