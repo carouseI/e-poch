@@ -16,21 +16,21 @@ public class NodeConnections : Node
     // Start is called before the first frame update
     public void Start()
     {
-        GameObject[] allNodes = GameObject.FindGameObjectsWithTag("Node"); //get all waypoint objects in scene
+        //GameObject[] allNodes = GameObject.FindGameObjectsWithTag("Node"); //get all waypoint objects in scene
 
-        _nodes = new List<Node>(); //create list of waypoint refs
+        //_nodes = new List<Node>(); //create list of waypoint refs
 
-        for (int i = 0; i < allNodes.Length; i++)
-        {
-            NodeConnections nextNode = allNodes[i].GetComponent<NodeConnections>(); //check for connected waypoint
+        //for (int i = 0; i < allNodes.Length; i++)
+        //{
+        //    NodeConnections nextNode = allNodes[i].GetComponent<NodeConnections>(); //check for connected waypoint
 
-            if (nextNode != null) //if found + not null
-            {
-                if (Vector3.Distance(this.transform.position, nextNode.transform.position) <= _connectivityRadius && nextNode != this) //if distance between current + next waypoint, + does not equal this
-                {
-                    _nodes.Add(nextNode); //add to current position
-                }
-            }
-        }
+        //    if (nextNode != null) //if found + not null
+        //    {
+        //        if (Vector3.Distance(this.transform.position, nextNode.transform.position) <= _connectivityRadius && nextNode != this) //if distance between current + next waypoint, + does not equal this
+        //        {
+        //            _nodes.Add(nextNode); //add to current position
+        //        }
+        //    }
+        //}
     }
 }
