@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class NPCCollect : MonoBehaviour
 {
-    [SerializeField]
-    List<NPC> _npcs; //npc list
+    //[SerializeField]
+    //List<NPC> _npcs; //npc list
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "NPC")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("key pressed");
-                Destroy(GameObject.FindWithTag("NPC"), 2);
-            }
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if(other.tag == "NPC")
+    //    {
+    //        if (Input.GetKeyDown(KeyCode.E))
+    //        {
+    //            Debug.Log("key pressed");
+    //            Destroy(GameObject.FindWithTag("NPC"), 2);
+    //        }
+    //    }
+    //}
 
     #region
     //float raycastDistance = 3;

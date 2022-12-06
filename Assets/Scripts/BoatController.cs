@@ -15,6 +15,16 @@ public class BoatController : MonoBehaviour
     void Update()
     {
         Movement();
+
+        //BoatController controller = GetComponent<BoatController>();
+
+        //if (transform != null)
+        //{
+        //    transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed, 0);
+        //    var forward = transform.TransformDirection(Vector3.forward);
+        //    float curSpeed = speed * Input.GetAxis("Vertical");
+        //    controller.move(forward * curSpeed);
+        //}
     }
 
     public void Movement()
@@ -126,5 +136,5 @@ public class BoatController : MonoBehaviour
     //    this.transform.position += changeInPos;
     //    //this.transform.Rotate(Quaternion.FromToRotation(this.transform.forward, moveDir).eulerAngles); //calculate rotation
     //}
-#endregion
+    #endregion
 }
