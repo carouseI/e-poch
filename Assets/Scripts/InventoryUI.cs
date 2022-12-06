@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    private TextMeshProUGUI obolText;
+    private Text obolText;
 
     private int obolTotal;
 
@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        obolText = GetComponent<TextMeshProUGUI>(); //get tmp comp
+        obolText = GetComponent<Text>(); //get text comp
         obolTotal = 0; //set inventory start count
     }
 
@@ -25,9 +25,9 @@ public class InventoryUI : MonoBehaviour
         obolText.text = playerInventory.ObolCount.ToString(); //set to inventory count
         obolTotal++; //increment
 
-        //if (obolTotal >= maxCollectibles) //if max is reached
-        //{
-        //    SceneManager.LoadScene("End Menu"); //go to scene
-        //}
+        if (obolTotal >= maxCollectibles) //if max is reached
+        {
+            SceneManager.LoadScene("End Menu"); //go to scene
+        }
     }
 }

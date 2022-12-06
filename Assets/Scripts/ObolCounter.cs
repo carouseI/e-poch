@@ -33,7 +33,7 @@ public class ObolCounter : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("key pressed");
-                Destroy(GameObject.FindWithTag("NPC"), 2);
+                Destroy(GameObject.FindWithTag("NPC"), 1);
                 obolCount++;
             }
         }

@@ -6,37 +6,39 @@ using UnityEngine;
 public class BoatController : MonoBehaviour
 {
     #region wasd
-    [SerializeField] float speed;
-    [SerializeField] float rotationSpeed;
+    //[SerializeField] float speed;
+    //[SerializeField] float rotationSpeed;
 
-    public Vector3 currentPosition;
+    //public Vector3 currentPosition;
 
-    // Update is called once per frame
-    void Update()
-    {
-        Movement();
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    Movement();
 
-        //BoatController controller = GetComponent<BoatController>();
+    //    //BoatController controller = GetComponent<BoatController>();
 
-        //if (transform != null)
-        //{
-        //    transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed, 0);
-        //    var forward = transform.TransformDirection(Vector3.forward);
-        //    float curSpeed = speed * Input.GetAxis("Vertical");
-        //    controller.move(forward * curSpeed);
-        //}
-    }
+    //    //if (transform != null)
+    //    //{
+    //    //    transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed, 0);
+    //    //    var forward = transform.TransformDirection(Vector3.forward);
+    //    //    float curSpeed = speed * Input.GetAxis("Vertical");
+    //    //    controller.move(forward * curSpeed);
+    //    //}
+    //}
 
-    public void Movement()
-    {
-        if (Input.GetKey(KeyCode.Z)) currentPosition.z += speed * Time.deltaTime; //w, forward
-        //if (Input.GetKey(KeyCode.S)) currentPosition.z -= speed * Time.deltaTime; //s, back
-        if (Input.GetKey(KeyCode.D)) currentPosition.x += speed * Time.deltaTime; //d, right
-        if (Input.GetKey(KeyCode.Q)) currentPosition.x -= speed * Time.deltaTime; //a, left
+    //public void Movement()
+    //{
+    //    if (Input.GetKey(KeyCode.Z)) currentPosition.z += speed * Time.deltaTime; //w, forward
+    //    //if (Input.GetKey(KeyCode.S)) currentPosition.z -= speed * Time.deltaTime; //s, back
+    //    if (Input.GetKey(KeyCode.D)) currentPosition.x += speed * Time.deltaTime; //d, right
+    //    if (Input.GetKey(KeyCode.Q)) currentPosition.x -= speed * Time.deltaTime; //a, left
 
-        transform.position = currentPosition;
-        //Quaternion rotation = Quaternion.LookRotation(currentPosition, Vector3.up);
-    }
+    //    //if input.GetAxis horizontal, rigidbody.addForce(Vector3 right * G
+
+    //    transform.position = currentPosition;
+    //    //Quaternion rotation = Quaternion.LookRotation(currentPosition, Vector3.up);
+    //}
     #endregion
 
     #region wasd rotation n°01 - ipr
@@ -58,14 +60,14 @@ public class BoatController : MonoBehaviour
     #endregion
 
     #region auto-move
-    //[SerializeField] float moveSpeed = 1f;
-    ////public static int moveSpeed = 1f;
-    //public Vector3 boatDirection = Vector3.forward;
+    [SerializeField] float moveSpeed = 1f;
+    //public static int moveSpeed = 1f;
+    public Vector3 boatDirection = Vector3.forward;
 
-    //public void Update()
-    //{
-    //    transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
-    //}
+    public void Update()
+    {
+        transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
+    }
     #endregion
 
     #region node-based movement w/ docking
