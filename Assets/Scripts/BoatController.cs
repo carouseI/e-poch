@@ -25,6 +25,7 @@ public class BoatController : MonoBehaviour
         if (Input.GetKey(KeyCode.Q)) currentPosition.x -= speed * Time.deltaTime; //a, left
 
         transform.position = currentPosition;
+        //Quaternion rotation = Quaternion.LookRotation(currentPosition, Vector3.up);
     }
     #endregion
 

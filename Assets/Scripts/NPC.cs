@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCChat : MonoBehaviour
+public class NPC : MonoBehaviour
 {
     [SerializeField]
     public GameObject chatBubblePrefab; 
