@@ -1483,6 +1483,43 @@ Transform:
   m_Father: {fileID: 1788224944}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -7.953, z: 0}
+--- !u!84 &185390423
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &186208914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3801,7 +3838,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405349891}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d5ac9593b59d4847815e4528b52a6d2, type: 3}
   m_Name: 
@@ -3830,30 +3867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51024ab0b40454df2aa5eeb66fe04c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _connectivityRadius: 50
-  _nodes:
-  - {fileID: 589292065}
-  - {fileID: 704130324}
-  - {fileID: 1202727115}
-  - {fileID: 309671933}
-  - {fileID: 2128109382}
-  - {fileID: 504220004}
-  - {fileID: 273063423}
-  - {fileID: 1442260692}
-  - {fileID: 2096335065}
-  - {fileID: 1129948054}
-  _docks:
-  - {fileID: 914575879}
-  - {fileID: 1787600805}
-  - {fileID: 380932237}
-  nextNode: {fileID: 0}
-  nextDock: {fileID: 0}
-  moveSpeed: 0.03
-  nextNodeIndex: 0
-  isFinalNode: 0
-  nextDockIndex: 0
-  isDocking: 0
-  isInDockingRange: 0
+  speed: 2.5
+  rotationSpeed: 0
 --- !u!65 &405349898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14953,43 +14968,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4752662876082006, guid: 1fdfc37f91a411548a5f4dcd69f7ecae, type: 3}
   m_PrefabInstance: {fileID: 943562164}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &945918970
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &949866639
 PrefabInstance:
   m_ObjectHideFlags: 0

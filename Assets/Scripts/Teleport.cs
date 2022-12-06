@@ -12,10 +12,10 @@ public class Teleport : MonoBehaviour
     //    Invoke("CollectNPC", 5.0f);
     //}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        prefab.transform.position = teleportTarget.transform.position;
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    prefab.transform.position = teleportTarget.transform.position;
+    //}
 
     //private void CollectNPC(Collider other)
     //{
