@@ -8,13 +8,13 @@ public class FirstPersonCamera : MonoBehaviour
     public float mouseSensitivity = 2f;
     float cameraVerticalRotation = 0; //default to forward facing cam @ start
 
-    //bool lockedCursor = true;
+    bool lockedCursor = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.visible = false; //hide
-        //Cursor.lockState = CursorLockMode.Locked; //lock cursor
+        Cursor.visible = false; //hide
+        Cursor.lockState = CursorLockMode.Locked; //lock cursor
     }
 
     // Update is called once per frame
