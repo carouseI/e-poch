@@ -9,7 +9,7 @@ public class BoatController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float rotationSpeed;
 
-    private Vector3 currentPosition;
+    public Vector3 currentPosition;
 
     // Update is called once per frame
     void Update()
