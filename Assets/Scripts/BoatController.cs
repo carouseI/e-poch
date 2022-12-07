@@ -60,14 +60,14 @@ public class BoatController : MonoBehaviour
     #endregion
 
     #region auto-move
-    [SerializeField] float moveSpeed = 1f;
-    //public static int moveSpeed = 1f;
-    public Vector3 boatDirection = Vector3.forward;
+    //[SerializeField] float moveSpeed = 1f;
 
-    public void Update()
-    {
-        transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
-    }
+    //public Vector3 boatDirection = Vector3.forward;
+
+    //public void Update()
+    //{
+    //    transform.Translate(boatDirection * moveSpeed * Time.deltaTime);
+    //}
     #endregion
 
     #region node-based movement w/ docking
@@ -137,6 +137,47 @@ public class BoatController : MonoBehaviour
 
     //    this.transform.position += changeInPos;
     //    //this.transform.Rotate(Quaternion.FromToRotation(this.transform.forward, moveDir).eulerAngles); //calculate rotation
+    //}
+    #endregion
+
+    #region addForce - short trip
+    //bool moveForward;
+    //bool moveBackward;
+
+    public float thrust = 1.0f;
+    public Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(0, 0, thrust, ForceMode.Impulse);
+    }
+
+    //public float forwardForce = 2000f;
+    //public float reverseForce = 200f;
+
+    //void FixedUpdate()
+    //{
+    //    rb.AddForce(0, 0, forwardForce * Time.deltaTime); //add force to player
+
+    //    if (Input.GetKeyDown(KeyCode.S) && moveBackward == true)
+    //    {
+    //        rb.AddForce(reverseForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+    //    }
+    //    else
+    //    {
+    //        rb.AddForce(0, 0, 0, 0);
+    //    }
+    //}
+
+    //public void onKeyDown()
+    //{
+    //    moveBackward = true;
+    //}
+
+    //public void onRelease()
+    //{
+    //    moveBackward = false;
     //}
     #endregion
 }
